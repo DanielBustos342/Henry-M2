@@ -1,0 +1,61 @@
+:root {
+  --nav-color: #23252b;
+  --nav-text-color: #dadada;
+  --nav-hover: #141519;
+}
+
+/*! Navegador */
+
+.nav {
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  background-color: var(--nav-color);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+}
+
+.nav-right {
+  display: flex;
+}
+
+.nav-li {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 60px;
+}
+
+.nav-li:hover {
+  background-color: var(--nav-hover);
+}
+
+/*! Portada */
+
+.cover {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-image: url("../assets/image/solo-leveling-portada.png");
+  background-size: cover;
+  z-index: -1;
+}
+
+/*! Recomendaciones */
+
+.recomentations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  padding: 64px;
+}
+
+.recomentations {
+  width: 230px;
+  height: 350px;
+  overflow: hidden;
+  background-color: blue;
+}
