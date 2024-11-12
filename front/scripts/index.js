@@ -15,12 +15,14 @@ const htmlRecomentations = tempData.map((movie) => {
   return `
     <div class="recomentations">
     <img src="${poster}">
+    <div class="recomentations-info">
     <h2>${title}</h2>
     <p>${rate}</p>
-    <p>genre: ${genre}</p>
-    <p>duration: ${duration}</p>
+    <p>geneno: ${genre}</p>
+    <p>duracion: ${duration}</p>
     <p>año: ${year}</p>
     <p>director: ${director}</p>
+    </div>
     </div>
     `;
 });
