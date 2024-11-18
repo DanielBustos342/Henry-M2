@@ -1,10 +1,8 @@
 const { Router } = require("express");
-const usersRouter = require("./usersRoutes");
-const postsRouter = require("./postsRoutes");
+const moviesRoutes = require("./moviesRoutes");
 
 const router = Router();
 
-router.use("/users", usersRouter);
-router.use("/posts", postsRouter);
+router.use("/movies", moviesRoutes);
 
 module.exports = router;

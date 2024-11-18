@@ -1,5 +1,5 @@
 const axios = require("axios");
-const movieAPI = "https://students-api.up.railway.app/movies";
+const movieAPI = "http://localhost:3000/movies";
 const cardRecomendations = require("./cardRecomendations.js");
 const {
   renderCardCarousel,
