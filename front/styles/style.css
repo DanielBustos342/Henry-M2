@@ -282,3 +282,57 @@
   box-shadow: 0 0 1px 1px #fff;
   transition: 0.2s;
 }
+
+/* !formulario */
+
+.select-option {
+  background-color: var(--btn-orange);
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.btn-delete-option {
+  background-color: var(--nav-color);
+  border: none;
+  color: var(--nav-text-color);
+  border-radius: 100%;
+  width: 23px;
+  height: 23px;
+}
+
+.btn-delete-option:hover {
+  background-color: var(--nav-hover);
+}
+
+.btn-form {
+  border: none;
+  border-radius: 10px;
+  width: 50%;
+  height: 40px;
+}
+
+.btn-form:hover {
+  background-color: #ff7b2d;
+}
+
+.form-container {
+  background-color: var(--nav-color);
+}
+
+.form-child {
+  background-color: #837777;
+}
+
+/* Oculta todas las secciones por defecto */
+.section {
+  display: none;
+}
+
+/* Sección activa */
+#home-content {
+  display: block;
+}
