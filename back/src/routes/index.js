@@ -5,4 +5,6 @@ const router = Router();
 
 router.use("/movies", moviesRoutes);
 
+router.use("/movies/:id", moviesRoutes);
+
 module.exports = router;
