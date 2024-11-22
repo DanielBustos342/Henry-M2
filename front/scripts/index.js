@@ -5,6 +5,7 @@ const {
   renderCardCarousel,
   carrouselIndicators,
 } = require("./cardCarrousel.js");
+const { events } = require("../../back/src/models/Movie.js");
 
 const fetchMoviesCarousel = async () => {
   try {
@@ -30,8 +31,8 @@ const fetchRecomendations = async () => {
 fetchMoviesCarousel();
 fetchRecomendations();
 
-const select = document.getElementById("generos");
-const listaGeneros = document.getElementById("lista-generos");
+const select = document.getElementById("genre-movie");
+const listaGeneros = document.getElementById("array-genre");
 let generosSeleccionados = [];
 
 select.addEventListener("change", () => {
@@ -81,20 +82,6 @@ select.addEventListener("change", () => {
   console.log("Géneros seleccionados:", generosSeleccionados);
 });
 
-// const showFormBtn = document.getElementById("show-form-btn");
-// const formLi = document.getElementById("form-li");
-
-// showFormBtn.addEventListener("click", (event) => {
-//   event.preventDefault(); // Prevenir que el enlace navegue a otra página
-
-//   // Toggle visibility of the form
-//   if (formLi.style.display === "none" || formLi.style.display === "") {
-//     formLi.style.display = "block"; // Mostrar el formulario
-//   } else {
-//     formLi.style.display = "none"; // Ocultar el formulario
-//   }
-// });
-
 document.getElementById("home-btn").addEventListener("click", function () {
   showContent("home");
 });
@@ -126,3 +113,42 @@ function showContent(section) {
 
   document.getElementById(section + "-content").style.display = "block";
 }
+
+//  ! Formulario
+const form = document.getElementById("form-movie");
+
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const movieData = {
+    title: form.title.value,
+    year: form.year.value,
+    director: form.director.value,
+    duration: form.duration.value,
+    genre: generosSeleccionados,
+    poster: form.poster.value,
+  };
+  try {
+    const response = await fetch("http://localhost:3000/api/movies", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // Asegura el tipo de contenido correcto
+      },
+      body: JSON.stringify(movieData), // Convierte el objeto a JSON
+    });
+
+    if (!response.ok) {
+      const errorDetails = await response.text();
+      console.error("Estado HTTP:", response.status);
+      console.error("Detalles del error:", errorDetails);
+      throw new Error(
+        `Error en la solicitud: ${response.status} ${errorDetails}`
+      );
+    }
+
+    const result = await response.json();
+    console.log("Película creada:", result);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+});

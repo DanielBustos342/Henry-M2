@@ -107,42 +107,58 @@
 
       <div id="add-movie-content" class="section" style="display: none">
         <h3 class="text-center m-4">Agrega un pelicula</h3>
-        <form class="container-sm form-container px-5 py-3 w-50">
+        <form
+          id="form-movie"
+          class="container-sm form-container px-5 py-3 w-50"
+        >
           <div class="mb-3">
-            <label for="validationTooltip01" class="form-label">Titulo</label>
+            <label for="title-movie" class="form-label">Titulo</label>
             <input
               type="text"
               class="form-control"
-              id="validationDefault01"
+              id="title-movie"
+              name="title"
               required
             />
             <div class="valid-tooltip">Looks good!</div>
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Año</label>
+            <label for="year-movie" class="form-label">Año</label>
             <input
               type="date"
               class="form-control"
-              id="validationDefault02"
+              id="year-movie"
+              name="year"
               required
             />
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Duracion</label>
+            <label for="director-movie" class="form-label">Director</label>
             <input
-              type="time"
+              type="text"
               class="form-control"
-              id="validationDefault03"
+              id="director-movie"
+              name="director"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="duration-movie" class="form-label">Duracion</label>
+            <input
+              type="text"
+              class="form-control"
+              id="duration-movie"
+              name="duration"
               required
             />
           </div>
 
           <div>
-            <label for="exampleInputEmail1" class="form-label"
+            <label for="genre-movie" class="form-label"
               >Selecciona generos:</label
             >
             <select
-              id="generos"
+              id="genre-movie"
               class="form-select"
               aria-label="Default select example"
               required
@@ -173,14 +189,22 @@
           </div>
           <div id="seleccionados">
             <ul
-              id="lista-generos"
+              id="array-genre"
               class="d-flex flex-row flex-wrap justify-content-start p-0"
+              name="genre"
             ></ul>
           </div>
 
           <div class="mb-3">
-            <label for="formFile" class="form-label">Ingresa una portada</label>
-            <input class="form-control" type="file" id="formFile" />
+            <label for="poster-movie" class="form-label"
+              >Ingresa una portada</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              id="poster-movie"
+              name="poster"
+            />
           </div>
           <div class="mb-3 d-flex justify-content-center mt-4">
             <button type="submit" class="btn-form">AGRGAR</button>

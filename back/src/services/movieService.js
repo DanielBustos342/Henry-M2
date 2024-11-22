@@ -1,4 +1,3 @@
-const { getMovieById } = require("../controllers/moviesController");
 const Movie = require("../models/Movie");
 // consultar a una base de datos BDD
 // Realizar una solicitud a un servicio externo
