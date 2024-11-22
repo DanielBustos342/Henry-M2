@@ -129,7 +129,7 @@ form.addEventListener("submit", async (event) => {
     poster: form.poster.value,
   };
   try {
-    const response = await fetch("http://localhost:3000/api/movies", {
+    const response = await fetch(movieAPI, {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // Asegura el tipo de contenido correcto
