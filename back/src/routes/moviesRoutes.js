@@ -5,9 +5,9 @@ const moviesRoutes = Router();
 
 moviesRoutes.get("/", moviesController.getAllMovies);
 
-moviesRoutes.post("/", moviesController.createMovie);
-
 moviesRoutes.get("/byName", moviesController.getMovieByName);
+
+moviesRoutes.post("/", moviesController.createMovie);
 
 moviesRoutes.get("/:id", validateId, moviesController.getMovieById);
 

@@ -148,6 +148,11 @@ form.addEventListener("submit", async (event) => {
 
     const result = await response.json();
     console.log("Película creada:", result);
+
+    // Limpiar el formulario y el array de géneros seleccionados
+    form.reset();
+    generosSeleccionados = [];
+    listaGeneros.innerHTML = "";
   } catch (error) {
     console.error("Error:", error);
   }
